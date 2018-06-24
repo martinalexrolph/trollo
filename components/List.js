@@ -50,58 +50,57 @@ class List extends React.Component {
         </div>
         <style jsx>
           {`
-                .list {
-                    display: inline;
-                    max-width: 25%;
-                    flex-grow: 1;
-                }
+              .list {
+                  display: inline;
+                  max-width: 25%;
+                  flex-grow: 1;
+              }
 
-                .listTitle{
-                    text-align: center;
-                    font-weight: bold;
-                    font-size: 15px;
-                    border-style: solid;
-                    border-color: rgb(255, 255, 255);
-                    border-width: 2px;
-                    justify-content: space-between;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 4px 0 4px;
-                    flex-grow: 1;
-                }
+              .listTitle{
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 15px;
+                  border-style: solid;
+                  border-color: rgb(255, 255, 255);
+                  border-width: 2px;
+                  justify-content: space-between;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 4px 0 4px;
+                  flex-grow: 1;
+              }
 
-                .listBody{
-                    list-style-type: none;
-                    justify-content: space-between;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 4px 0 4px;
-                    flex-grow: 1;
-                    flex-wrap: nowrap;
-                    width: 100%;
-                    flex-direction: column;
-                }
+              .listBody{
+                  list-style-type: none;
+                  justify-content: space-between;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 4px 0 4px;
+                  flex-grow: 1;
+                  flex-wrap: nowrap;
+                  width: 100%;
+                  flex-direction: column;
+              }
 
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    list-style-type: none;
-                    width: 100%;
-                }
-                ul{
-                    padding-left: 0px;
-                }
-                li {
-                    display: flex;
-                }
-                .deleteListButton{
-                    text-align: right;
-                    font-weight: bold;
-                    border: none;
-                }
-                    }
-                `}
+              ul {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  list-style-type: none;
+                  width: 100%;
+              }
+              ul{
+                  padding-left: 0px;
+              }
+              li {
+                  display: flex;
+              }
+              .deleteListButton{
+                  text-align: right;
+                  font-weight: bold;
+                  border: none;
+              }
+          `}
         </style>
       </div>
     );
