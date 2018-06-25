@@ -37,7 +37,7 @@ class List extends React.Component {
             onChange={() => this.props.toggleAllComplete(this.props.listIndex)}
           />
 
-          <h2>{list.title}</h2>
+          <h2 className="listHeader">{list.title}</h2>
           <button
             className="deleteListButton"
             onClick={e => this.props.deleteList(this.props.listIndex)}
@@ -53,7 +53,9 @@ class List extends React.Component {
               .list {
                   display: inline;
                   max-width: 25%;
+                  min-width: 200px;
                   flex-grow: 1;
+                  margin: 0 10px;
               }
 
               .listTitle{
@@ -70,12 +72,20 @@ class List extends React.Component {
                   flex-grow: 1;
               }
 
+              .listHeader {
+                max-width: 150px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+              }
+
               .listBody{
                   list-style-type: none;
                   justify-content: space-between;
                   display: flex;
                   align-items: center;
-                  padding: 0 4px 0 4px;
+                  padding: 0;
                   flex-grow: 1;
                   flex-wrap: nowrap;
                   width: 100%;

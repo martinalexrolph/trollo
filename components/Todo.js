@@ -43,6 +43,8 @@ export default class Todo extends React.Component {
               .todoText {
                   margin: 0 5px 8px;
                   flex-grow: 1;
+                  overflow-wrap: break-word;
+                  max-width: 100px;
               }
 
               .smallButton {

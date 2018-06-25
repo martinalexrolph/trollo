@@ -172,12 +172,10 @@ class Control extends React.Component {
             }
 
             .addContainer {
-              display: flex;
-              justify-content: space-around;
-              flex-grow: 1;
+              display: block;
               align-items: center;
               padding: 2px 2px 2px 2px;
-              max-width: 40%;
+              max-width: 100%;
               white-space: nowrap;
             }
 

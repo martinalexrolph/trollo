@@ -21,6 +21,19 @@ class Board extends React.Component {
     this.updateTodo = this.updateTodo.bind(this);
   }
 
+  componentDidMount() {
+    try {
+      const cachedLists = JSON.parse(localStorage.getItem('lists')) || []
+      this.setState({ lists: cachedLists })
+    } catch(error) {
+      console.log("Error parsing JSON:", localStorage.getItem('lists'))
+    }
+  }
+
+  componentDidUpdate(props, state) {
+    localStorage.setItem('lists', JSON.stringify(state.lists))
+  }
+
   editingTodoHandler(listIndex, todoIndex) {
     const oldTodoText = this.state.lists[listIndex].todos[todoIndex].todoText;
     this.setState({
@@ -77,8 +90,6 @@ class Board extends React.Component {
       }
     });
     this.checkAllComplete(listIndex);
-
-    // todo.complete = !currentList.allComplete;
   }
 
   saveTodo(listIndex, todoText) {
@@ -175,11 +186,12 @@ class Board extends React.Component {
               list-style-type: none;
               display: flex;
               align-items: flex-start;
-              justify-content: space-around;
+              justify-content: start;
               width: 100%;
               background-color: RGB(16, 0, 102);
-              padding: 10px 0 10px 0;
+              padding: 10px 0;
               color: white;
+              overflow: scroll;
             }
 
             p {
