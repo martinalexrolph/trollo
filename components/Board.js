@@ -50,22 +50,16 @@ class Board extends React.Component {
 
   checkAllComplete(listIndex) {
     const currentList = this.state.lists[listIndex];
-    const todos = currentList.todos;
-    const totalTodos = todos.length;
-    let completedTodos = 0;
+    const updatedLists = this.state.lists;
 
-    todos.forEach(todo => {
-      todo.complete && completedTodos++;
-    });
-
-    if (completedTodos === totalTodos) {
-      currentList.allComplete = true;
-    } else {
-      currentList.allComplete = false;
+    const isComplete = (todos) => {
+      for (let i = todos.length - 1; i >= 0; i--) {
+        if (!todos[i].complete) return false;
+      }
+      return true;
     }
 
-    const updatedLists = this.state.lists;
-    updatedLists.splice(listIndex, 1, currentList);
+    updatedLists[listIndex].allComplete = isComplete(currentList.todos)
 
     this.setState({
       lists: updatedLists,
